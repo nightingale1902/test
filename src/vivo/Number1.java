@@ -25,6 +25,17 @@ public class Number1 {
         return res;
     }
 
+    public static void main(String[] args) {
 
-
+    }
+    /*class StaticTest{
+    	private static Vector vector = new Vector(10);
+    	public void init(){
+		    for (int i = 0; i < 100; i++) {
+		    	Object object = new Object();
+			    vector.add(object);
+			    object = null;
+		    }
+	    }
+    }*/
 }

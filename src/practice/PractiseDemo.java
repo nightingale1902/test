@@ -1,8 +1,5 @@
 package practice;
 
-import org.junit.Test;
-import sun.security.util.Length;
-
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -93,7 +90,8 @@ public class PractiseDemo {
     所以此时left更新为0，映射对更新为a->1，那么此时i-left还为1，不用更新结果res，那么最终结果res还为1*/
     public int lengthOfLongestSubstring1(String s) {
         int res = 0, left = -1, n = s.length();
-        HashMap<Character, Integer> m = new HashMap<>();//key为s的character，value为s的character的index
+	    //key为s的character，value为s的character的index
+        HashMap<Character, Integer> m = new HashMap<>();
         for (int i = 0; i < n; ++i) {
             if (m.containsKey(s.charAt(i)) && m.get(s.charAt(i)) > left){
                 left = m.get(s.charAt(i));

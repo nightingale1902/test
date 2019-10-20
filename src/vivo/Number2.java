@@ -13,10 +13,12 @@ public class Number2 {
     }
 
     public ListNode reverseBetween(ListNode head, int m, int n) {
-        if (head == null)
-            return null;
-        if (m == n)
-            return head;
+        if (head == null) {
+	        return null;
+        }
+        if (m == n) {
+	        return head;
+        }
         Stack<ListNode> stack = new Stack<>();
         //将m-n的结点入栈，将前后相邻的两个结点标记;
         int num = 1;
@@ -24,7 +26,9 @@ public class Number2 {
         ListNode psecond = null;
         ListNode p = head;
         //特殊情况，m==1时，头结点变更;
-        if (m == 1) pfirst = null;
+        if (m == 1) {
+        	pfirst = null;
+        }
         for (; num <= n; num++) {
             //记录pfirst;
             if (num < m) {
