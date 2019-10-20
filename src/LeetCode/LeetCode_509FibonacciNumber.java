@@ -6,12 +6,16 @@ package LeetCode;
  */
 public class LeetCode_509FibonacciNumber {
     public int fib(int N) {
-        if(N == 0 || N == 1) return N;
+        if(N == 0 || N == 1) {
+	        return N;
+        }
         return fib(N - 1) + fib(N - 2);
     }
 
     public int fib2(int N) {
-        if(N == 0 || N == 1) return N;
+        if(N == 0 || N == 1) {
+	        return N;
+        }
         int fibOne = 1;
         int fibTwo = 0;
         int fibN = 0;

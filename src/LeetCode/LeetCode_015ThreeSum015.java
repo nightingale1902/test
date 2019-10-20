@@ -20,25 +20,26 @@ public class LeetCode_015ThreeSum015 {
     //很重要，借鉴twosum，
     //time: O(n^2) space: O(n);
     public List<List<Integer>> threeSum(int[] nums) {
-        List<List<Integer>> res = new ArrayList<>();
-        if (nums == null || nums.length < 3) return res;  // 鲁棒性检查
-        Arrays.sort(nums);
-        for (int i = 0; i < nums.length - 2; i++) {
-            if (i > 0 && nums[i] == nums[i - 1]) continue;//跳过重复,去除重复答案
-            int low = i + 1, high = nums.length - 1, sum = 0 - nums[i];
-            //从这开始类似twosum
-            while (low < high) {
-                if (nums[low] + nums[high] == sum) {
-                    res.add(Arrays.asList(nums[i], nums[low], nums[high]));
-                    //去重
-                    while (low < high && nums[low] == nums[low + 1]) low++;
-                    while (low < high && nums[high] == nums[high - 1]) high--;
-                    low++;
-                    high--;
-                } else if (nums[low] + nums[high] < sum) {
-                    low++;
-                } else high--;
-            }
+		        List<List<Integer>> res = new ArrayList<>();
+		        if (nums == null || nums.length < 3) return res;  // 鲁棒性检查
+		        Arrays.sort(nums);
+		        for (int i = 0; i < nums.length - 2; i++) {
+			        //跳过重复,去除重复答案
+			        if (i > 0 && nums[i] == nums[i - 1]) continue;
+			        int low = i + 1, high = nums.length - 1, sum = 0 - nums[i];
+			        //从这开始类似twosum
+			        while (low < high) {
+				        if (nums[low] + nums[high] == sum) {
+					        res.add(Arrays.asList(nums[i], nums[low], nums[high]));
+					        //去重
+					        while (low < high && nums[low] == nums[low + 1]) low++;
+					        while (low < high && nums[high] == nums[high - 1]) high--;
+					        low++;
+					        high--;
+				        } else if (nums[low] + nums[high] < sum) {
+					        low++;
+				        } else high--;
+			        }
         }
         return res;
     }

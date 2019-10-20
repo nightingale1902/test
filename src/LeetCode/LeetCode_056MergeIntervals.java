@@ -11,7 +11,9 @@ public class LeetCode_056MergeIntervals {
     如果有重叠，将结果中最后一个区间的end值更新为结果中最后一个区间的end和当前end值之中的较大值，
     然后继续遍历区间集，以此类推可以得到最终结果*/
     public int[][] merge(int[][] intervals) {
-        if(intervals == null || intervals.length <= 1) return intervals;
+        if(intervals == null || intervals.length <= 1) {
+	        return intervals;
+        }
         List<int[]> list = new ArrayList<>();
         Arrays.sort(intervals, new Comparator<int[]>() {
             @Override
